@@ -1,4 +1,7 @@
-var items = document.getElementsByClassName('list-group-item')
-console.log(items);
-items[2].style.fontweight = 'bold';
-items.style.backgroundColor = 'green'
+var items = document.getElementsByClassName('li')
+console.log(li);
+li[2].style.fontweight = 'bold';
+li.style.backgroundColor = 'green'
+for(var i=0;i<li.length;i++){
+    items[i].style.backgroundColor = 'grey';
+}
