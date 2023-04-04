@@ -49,6 +49,7 @@ function removeItem(e){
   }
 }
 
+
 // Filter Items
 function filterItems(e){
   // convert text to lowercase
