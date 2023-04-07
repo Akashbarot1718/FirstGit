@@ -10,15 +10,27 @@
             <button> Submit </button>
 
         </form>
+        <ul id='listofitems'></ul>
         <script>
             function saveToLocalStorage(event) {
                 event.preventDefault();
                 const name = event.target.username.value;
                 const email = event.target.emailId.value;
                 const phonenumber = event.target.phonenumber.value;
-                localStorage.setItem('name', name);
-                localStorage.setItem('email', email);
-                localStorage.setItem('phonenumber', phonenumber)
+                //localStorage.setItem('name', name);
+                //localStorage.setItem('email', email);
+                //localStorage.setItem('phonenumber', phonenumber)
+                const obj={
+                    name,
+                    email,
+                    phonenumber
+                }
+                localStorage.setItem(obj.email, JSON.stringify(obj))
+                ShowUserOnScreen(obj)
+            }
+            function ShowUserOnScreen(obj){
+                const ParentELem=document.getElementById('ListofItems')
+                ParentELem.innerHTML=ParentELem.innerHTML+'<li>${obj.name} - ${obj.email}- ${obj.phonenumber}</li>'
             }
         </script>
     </body>
