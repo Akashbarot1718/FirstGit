@@ -30,8 +30,17 @@
             }
             function ShowUserOnScreen(obj){
                 const ParentELem=document.getElementById('ListofItems')
-                ParentELem.innerHTML=ParentELem.innerHTML+'<li>${obj.name} - ${obj.email}- ${obj.phonenumber}</li>'
+                ParentELem.innerHTML=ParentELem.innerHTML + ' <li>${obj.name} - ${obj.email} - ${obj.phonenumber} </li> '
             }
+            const deleteButton = document.createElement('input')
+            deleteButton.type = "Button"
+            deleteButton.value = 'Delete'
+            deleteButton.onclick = () => {
+                localStorage.removeItem(obj.email)
+                ParentELem.removeChild(childELem)
+            }
+            childELem.appendchild(deletebutton)
+            ParentELem.appendchild(childELem)
         </script>
     </body>
 </html>
