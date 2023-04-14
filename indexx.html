@@ -33,13 +33,18 @@
                 ParentELem.innerHTML=ParentELem.innerHTML + ' <li>${obj.name} - ${obj.email} - ${obj.phonenumber} </li> '
             }
             const deleteButton = document.createElement('input')
-            deleteButton.type = "Button"
-            deleteButton.value = 'Delete'
-            deleteButton.onclick = () => {
+            editButton.type = "Button"
+            editButton.value = 'Delete'
+            editButton.onclick = () => {
                 localStorage.removeItem(obj.email)
                 ParentELem.removeChild(childELem)
+                document.getelementById('usernameInputTag').value = obj.name
+                document.getelementById('emailInputTag').value = obj.name
+                document.getelementById('phonenumberInputTag').value = obj.name
+
             }
             childELem.appendchild(deletebutton)
+            childELem.appendchild(editButton)
             ParentELem.appendchild(childELem)
         </script>
     </body>
